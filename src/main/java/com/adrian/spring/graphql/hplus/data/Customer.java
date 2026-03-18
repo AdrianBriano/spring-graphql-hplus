@@ -22,7 +22,7 @@ public class Customer {
     private String email;
 
     @Column(name="PHONE")
-    private String phone;
+    private String phoneNumber;
 
     @Column(name="ADDRESS")
     private String address;
@@ -68,12 +68,12 @@ public class Customer {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getAddress() {
