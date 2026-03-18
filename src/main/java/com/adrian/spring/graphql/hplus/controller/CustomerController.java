@@ -22,8 +22,8 @@ public class CustomerController {
     }
 
     @QueryMapping
-    public Customer customerById(@Argument Long id) {
-        return customerRepository.findById(id).orElseThrow();
+    public Customer customerById(@Argument Long customerId) {
+        return customerRepository.findById(customerId).orElseThrow();
     }
 
     @QueryMapping

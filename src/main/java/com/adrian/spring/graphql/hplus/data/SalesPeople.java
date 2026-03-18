@@ -4,13 +4,13 @@ package com.adrian.spring.graphql.hplus.data;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="CUSTOMERS")
-public class Customer {
+@Table(name="SALESPEOPLE")
+public class SalesPeople {
 
     @Id
-    @Column(name="CUSTOMER_ID")
+    @Column(name="SALESPERSON_ID")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long customerId;
+    private long salesPersonId;
 
     @Column(name="FIRST_NAME")
     private String firstName;
@@ -36,12 +36,12 @@ public class Customer {
     @Column(name="ZIPCODE")
     private String zipCode;
 
-    public long getCustomerId() {
-        return customerId;
+    public long getSalesPersonId() {
+        return salesPersonId;
     }
 
-    public void setCustomerId(long customerId) {
-        this.customerId = customerId;
+    public void setSalesPersonId(long salesPersonId) {
+        this.salesPersonId = salesPersonId;
     }
 
     public String getFirstName() {
