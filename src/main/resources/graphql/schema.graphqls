@@ -1,5 +1,5 @@
-type Customer {
-    id: ID!
+type SalesPeople {
+    salesPersonId: ID!
     firstName: String!
     lastName: String!
     email: String!
@@ -8,6 +8,27 @@ type Customer {
     city: String!
     state: String!
     zipCode: String!
+}
+
+type Customer {
+    customerId: ID!
+    firstName: String!
+    lastName: String!
+    email: String!
+    phoneNumber: String!
+    address: String!
+    city: String!
+    state: String!
+    zipCode: String!
+}
+
+type Products {
+    productId: ID!
+    name: String!
+    size: Int!
+    variety: String!
+    price: Float!
+    status: String!
 }
 
 input CustomerInput {
@@ -21,9 +42,26 @@ input CustomerInput {
     zipCode: String!
 }
 
+type Orders {
+    orderId: ID!
+    customerId: ID!
+    salesPersonId: ID!
+}
+
+type OrderLines {
+    orderLineId: ID!
+    orderId: ID!
+    productId: ID!
+    quantity: Int!
+}
+
 type Query {
+    salesPeople: [SalesPeople]!
+    salesPersonById(salesPersonId: ID): SalesPeople
+    salesPersonByEmail(email: String): SalesPeople
+
     customers: [Customer]!
-    customerById(id: ID): Customer
+    customerById(customerId: ID): Customer
     customerByEmail(email: String): Customer
 }
 
