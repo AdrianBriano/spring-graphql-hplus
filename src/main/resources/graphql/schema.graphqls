@@ -1,4 +1,4 @@
-type SalesPeople {
+type SalesPerson {
     salesPersonId: ID!
     firstName: String!
     lastName: String!
@@ -44,11 +44,11 @@ input CustomerInput {
 
 type Orders {
     orderId: ID!
-    customerId: ID!
-    salesPersonId: ID!
+    customer: Customer,
+    salesPerson: SalesPerson!
 }
 
-type OrderLines {
+type OrderLine {
     orderLineId: ID!
     orderId: ID!
     productId: ID!
@@ -56,13 +56,15 @@ type OrderLines {
 }
 
 type Query {
-    salesPeople: [SalesPeople]!
-    salesPersonById(salesPersonId: ID): SalesPeople
-    salesPersonByEmail(email: String): SalesPeople
+    salesPeople: [SalesPerson]!
+    salesPersonById(salesPersonId: ID): SalesPerson
+    salesPersonByEmail(email: String): SalesPerson
 
     customers: [Customer]!
     customerById(customerId: ID): Customer
     customerByEmail(email: String): Customer
+
+    orders: [Orders]!
 }
 
 type Mutation {

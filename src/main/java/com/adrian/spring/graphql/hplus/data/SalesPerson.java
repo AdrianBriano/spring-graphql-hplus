@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="SALESPEOPLE")
-public class SalesPeople {
+public class SalesPerson{
 
     @Id
     @Column(name="SALESPERSON_ID")
